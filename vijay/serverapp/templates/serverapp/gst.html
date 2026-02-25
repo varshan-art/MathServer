@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>GST Bill Calculator</title>
+        <style>
+        .box {
+            width:500px;
+            height:300px;
+            border:dashed 3px blueviolet;
+            padding:10px;
+            position:fixed;
+            top:190px;
+            left:750px;
+            text-align:center;
+            background-color:greenyellow;
+            }
+        </style>
+    </head>
+    <body bgcolor="lightyellow">
+        <div class="box">
+            <h1>Total Bill Amount</h1>
+            <h3>SRI VIJAY VARSHAN.G[25008956]</h3>
+            <form method="POST">
+                {% csrf_token %}
+        <div>
+            <label>Price(₹)</label>
+            <input type="text" name="price" required>
+        </div>
+        <br>
+        <div>
+            <label>GST(%)</label>
+            <input type="text" name="gst" required>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Calculate">
+        </div>
+        <br>
+        <div>
+            <label>Total Bill (₹)</label>
+            <input type="text" value="{{bill}}">
+        </div>
+            </form>
+        </div>
+    </body>
+</html>
